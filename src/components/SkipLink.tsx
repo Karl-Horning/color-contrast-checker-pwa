@@ -2,7 +2,7 @@
  * “Skip to main content” link for keyboard users.
  *
  * Visually hidden until focused, then appears and jumps to the element with
- * `id="main-content"`. Place near the top of the DOM so it’s one of the first
+ * `id="main-content"`. Place near the top of the DOM so it's one of the first
  * focusable elements.
  *
  * @returns A visually hidden anchor that becomes visible on focus and moves focus to the main content region.
