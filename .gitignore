@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Affinity autosave/backup (safe to ignore)
+*.autosave
+*.afdesign-preview
+*.afdesign~lock~
+*.afphoto-preview
+*.afphoto-~lock~
+*.afpub-preview
+*.afpub-~lock~
