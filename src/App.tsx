@@ -5,6 +5,7 @@ import LivePreview from "./components/LivePreview";
 import { normaliseHex } from "./utils/colourUtils";
 import ContrastChecker from "./components/ContrastChecker";
 import Footer from "./components/Footer";
+import SkipLink from "./components/SkipLink";
 
 function App() {
     const [textInput, setTextInput] = useState("#000000");
@@ -15,7 +16,11 @@ function App() {
 
     return (
         <>
-            <main className="mx-auto grid max-w-6xl grid-cols-1 gap-6 p-6 xl:grid-cols-3">
+            <SkipLink />
+            <main
+                id="main-content"
+                className="mx-auto grid max-w-6xl grid-cols-1 gap-6 p-6 xl:grid-cols-3"
+            >
                 <ColourPicker
                     textValue={textInput}
                     backgroundValue={backgroundInput}
