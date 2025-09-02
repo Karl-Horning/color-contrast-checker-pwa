@@ -133,7 +133,7 @@ const ColourPicker = ({
         >
             <header className="flex items-center justify-between">
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-                    Colours
+                    Colors
                 </h3>
             </header>
 
