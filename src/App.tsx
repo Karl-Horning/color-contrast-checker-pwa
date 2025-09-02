@@ -6,6 +6,7 @@ import { normaliseHex } from "./utils/colourUtils";
 import ContrastChecker from "./components/ContrastChecker";
 import Footer from "./components/Footer";
 import SkipLink from "./components/SkipLink";
+import Header from "./components/Header";
 
 function App() {
     const [textInput, setTextInput] = useState("#000000");
@@ -17,6 +18,7 @@ function App() {
     return (
         <>
             <SkipLink />
+            <Header />
             <main
                 id="main-content"
                 className="mx-auto grid max-w-6xl grid-cols-1 gap-6 p-6 xl:grid-cols-3"
