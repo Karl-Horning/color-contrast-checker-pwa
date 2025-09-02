@@ -1,69 +1,134 @@
-# React + TypeScript + Vite
+# 🎨 Color Contrast Checker PWA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 📖 Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [🎨 Color Contrast Checker PWA](#-color-contrast-checker-pwa)
+  - [📖 Table of Contents](#-table-of-contents)
+  - [🤓 Overview](#-overview)
+  - [📸 Screenshots \& Demo](#-screenshots--demo)
+  - [🛠️ Tech Stack](#️-tech-stack)
+  - [📦 Installation](#-installation)
+  - [🚀 Scripts \& Usage](#-scripts--usage)
+  - [📁 Project Structure](#-project-structure)
+  - [✍️ Code Style \& Linting](#️-code-style--linting)
+  - [🌐 Live Site or Deployment](#-live-site-or-deployment)
+  - [📌 Roadmap](#-roadmap)
+  - [📚 Further Reading \& Resources](#-further-reading--resources)
+  - [📄 Licence](#-licence)
+  - [👤 Author](#-author)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🤓 Overview
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+An accessible **Progressive Web App (PWA)** to check **colour (color) contrast ratios** for text and backgrounds, ensuring compliance with **WCAG**.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Features include live preview, clear pass/fail badges for AA/AAA (normal/large text), keyboard-friendly controls, and a class-based dark mode.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 📸 Screenshots & Demo
+
+![Demo screenshot](public/demo.png)
+
+Live: <https://www.karlhorning.dev/color-contrast-checker-pwa/>
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: Vite + React 19
+- **Languages**: TypeScript
+- **Styling**: Tailwind CSS v4 (class-based dark mode)
+- **Tooling**: `@tailwindcss/vite`, `vite-plugin-pwa`, ESLint, Prettier, React Icons
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/Karl-Horning/color-contrast-checker-pwa.git
+cd color-contrast-checker-pwa
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Scripts & Usage
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Command           | Description              |
+| ----------------- | ------------------------ |
+| `npm run dev`     | Start local development  |
+| `npm run build`   | Build for production     |
+| `npm run preview` | Preview production build |
+| `npm run lint`    | Run ESLint checks        |
+
+---
+
+## 📁 Project Structure
+
+```bash
+src/
+├── components/               # UI components (ColourPicker, ContrastChecker, LivePreview, Header, Footer, etc.)
+├── utils/                    # Utilities (e.g. colour/contrast helpers)
+├── assets/                   # Icons/images (SVG/PNG) if imported by components
+├── App.tsx                   # Root layout (grid of components)
+├── main.tsx                  # React entry
+└── index.css                 # Tailwind v4 entry + custom variant for dark mode
 ```
+
+> Tailwind v4 uses the new one-line import:
+>
+> ```css
+> @import "tailwindcss";
+> /* Make dark: variants follow the .dark class */
+> @custom-variant dark (&:where(.dark, .dark *));
+> ```
+
+---
+
+## ✍️ Code Style & Linting
+
+- ESLint with recommended rules
+- Prettier with Tailwind plugin
+- Conventional Commits (`feat`, `fix`, `refactor`, `a11y`, etc.)
+
+---
+
+## 🌐 Live Site or Deployment
+
+Visit the site:
+👉 **[Color Contrast Checker PWA](https://www.karlhorning.dev/color-contrast-checker-pwa/)**
+
+---
+
+## 📌 Roadmap
+
+- [x] Implement WCAG contrast ratio checking
+- [ ] Add offline support (PWA features for usage without internet)
+- [ ] Allow saving custom colour palettes
+- [ ] Suggest accessible colour combinations based on user input
+- [ ] Improve responsive layout and accessibility audits
+- [ ] Add sharing/export options for palettes and results
+
+---
+
+## 📚 Further Reading & Resources
+
+- [W3C WCAG Contrast Guidelines](https://www.w3.org/WAI/WCAG21/quickref/#contrast-minimum)
+- [WebAIM: Contrast Checker](https://webaim.org/resources/contrastchecker/)
+- [The Paciello Group: Colour Contrast Analyser](https://www.tpgi.com/color-contrast-checker/)
+
+---
+
+## 📄 Licence
+
+MIT © 2025 Karl Horning
+
+---
+
+## 👤 Author
+
+Made with ❤️ by [Karl Horning](https://github.com/Karl-Horning)
