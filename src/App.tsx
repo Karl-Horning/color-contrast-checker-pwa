@@ -21,7 +21,7 @@ function App() {
             <Header />
             <main
                 id="main-content"
-                className="mx-auto grid max-w-6xl grid-cols-1 gap-6 p-6 xl:grid-cols-3"
+                className="mx-auto grid max-w-6xl grid-cols-1 gap-6 p-6 md:grid-cols-2 lg:grid-cols-3"
             >
                 <ColourPicker
                     textValue={textInput}
