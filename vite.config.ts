@@ -5,6 +5,7 @@ import { VitePWA } from "vite-plugin-pwa";
 
 // https://vite.dev/config/
 export default defineConfig({
+    base: "/color-contrast-checker-pwa/",
     plugins: [
         react(),
         tailwindcss(),
