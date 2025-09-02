@@ -7,6 +7,8 @@ import iconFail from "../assets/iconFail.svg";
 interface StatusBadgeProps {
     /** Indicates the status type to display. Accepts `"pass"` or `"fail"`. */
     status: "pass" | "fail";
+    /** Optional extra classes for layout tweaks where used. */
+    className?: string;
 }
 
 /**
@@ -17,27 +19,41 @@ interface StatusBadgeProps {
  * @param {StatusBadgeProps} props - The component props
  * @returns A badge element styled according to the status
  */
-export default function StatusBadge({ status }: StatusBadgeProps) {
-    const statuses = {
+export default function StatusBadge({
+    status,
+    className = "",
+}: StatusBadgeProps) {
+    const variants = {
         pass: {
-            bg: "bg-green-100",
-            text: "text-green-700",
+            bg: "bg-emerald-100 dark:bg-emerald-900/30",
+            text: "text-emerald-800 dark:text-emerald-300",
+            border: "border-emerald-200 dark:border-emerald-800",
             label: "Pass",
             icon: iconPass,
         },
         fail: {
-            bg: "bg-red-100",
-            text: "text-red-700",
+            bg: "bg-rose-100 dark:bg-rose-900/30",
+            text: "text-rose-800 dark:text-rose-300",
+            border: "border-rose-200 dark:border-rose-800",
             label: "Fail",
             icon: iconFail,
         },
-    };
+    } as const;
 
-    const { bg, text, label, icon } = statuses[status];
+    const { bg, text, border, label, icon } = variants[status];
 
     return (
         <span
-            className={`flex items-center gap-1 rounded px-2 py-1 text-sm ${bg} ${text}`}
+            className={[
+                "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-sm font-medium",
+                "border shadow-sm",
+                bg,
+                text,
+                border,
+                className,
+            ].join(" ")}
+            // Helpful native tooltip, especially when truncated in tight layouts
+            title={label}
         >
             <img
                 src={icon}
@@ -46,7 +62,7 @@ export default function StatusBadge({ status }: StatusBadgeProps) {
                 alt=""
                 aria-hidden="true"
             />
-            {label}
+            <span>{label}</span>
         </span>
     );
 }

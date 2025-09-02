@@ -32,8 +32,9 @@ export default function ContrastChecker({
 }: ContrastCheckerProps) {
     const contrastRatio = getContrastRatio(textHex, backgroundHex);
     const formattedRatio = contrastRatio.toFixed(2);
-    const contrastCompliance = getContrastCompliance(contrastRatio);
-    const { aaNormal, aaLarge, aaaNormal, aaaLarge } = contrastCompliance;
+    const { aaNormal, aaLarge, aaaNormal, aaaLarge } =
+        getContrastCompliance(contrastRatio);
+
     const results = [
         { label: "WCAG AA Normal Text", passed: aaNormal },
         { label: "WCAG AAA Normal Text", passed: aaaNormal },
@@ -43,29 +44,56 @@ export default function ContrastChecker({
 
     return (
         <section
-            className="space-y-2 rounded-lg border p-4"
+            className={[
+                "space-y-4 rounded-2xl border",
+                "border-slate-200 dark:border-slate-700",
+                "bg-white/60 dark:bg-slate-800/60",
+                "backdrop-blur-sm",
+                "p-4 sm:p-5",
+                "shadow-sm",
+            ].join(" ")}
             aria-labelledby="contrast-heading"
             role="group"
         >
-            <h3 id="contrast-heading" className="text-lg font-bold">
-                Results
-            </h3>
+            <header className="flex items-center justify-between">
+                <h3
+                    id="contrast-heading"
+                    className="text-lg font-semibold text-slate-900 dark:text-slate-100"
+                >
+                    Results
+                </h3>
 
-            <div role="list" className="space-y-2">
-                <div role="listitem" className="flex justify-between">
-                    <span className="font-medium">Contrast Ratio</span>
-                    <span className="font-normal">{formattedRatio}:1</span>
+                {/* Prominent ratio display */}
+                <div
+                    className="rounded-lg border border-slate-300 bg-white/70 px-3 py-1.5 text-sm font-medium shadow-sm dark:border-slate-600 dark:bg-slate-800/70"
+                    aria-label="Contrast ratio"
+                >
+                    <span className="font-mono tabular-nums">
+                        {formattedRatio}:1
+                    </span>
                 </div>
+            </header>
 
+            {/* Results list */}
+            <dl
+                className="grid grid-cols-1 gap-x-6 gap-y-3"
+                role="list"
+            >
                 {results.map(({ label, passed }) => (
-                    <div key={label} className="flex justify-between">
-                        <dt className="font-medium">{label}</dt>
-                        <dd>
+                    <div
+                        key={label}
+                        className="flex items-center justify-between rounded-lg border border-slate-200 bg-white/50 px-3 py-2 dark:border-slate-700 dark:bg-slate-800/50"
+                        role="listitem"
+                    >
+                        <dt className="text-sm font-medium text-slate-800 dark:text-slate-200">
+                            {label}
+                        </dt>
+                        <dd className="ml-4">
                             <StatusBadge status={passed ? "pass" : "fail"} />
                         </dd>
                     </div>
                 ))}
-            </div>
+            </dl>
         </section>
     );
 }
