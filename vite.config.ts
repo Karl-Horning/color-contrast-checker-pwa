@@ -18,9 +18,10 @@ export default defineConfig({
             manifest: {
                 name: "Color Contrast Checker",
                 short_name: "CC Checker",
-                description: "TODO: Add description, colours, & icons!",
-                theme_color: "#ffffff",
-                background_color: "#ffffff",
+                description:
+                    "A Progressive Web App for checking colour (color) contrast ratios and WCAG compliance, with offline support, saved palettes, and suggested combinations.",
+                theme_color: "#0f172a",
+                background_color: "#f8fafc",
                 display: "standalone",
 
                 // Relative so iOS anchors to the subfolder
