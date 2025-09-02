@@ -4,6 +4,7 @@ import ColourPicker from "./components/ColourPicker";
 import LivePreview from "./components/LivePreview";
 import { normaliseHex } from "./utils/colourUtils";
 import ContrastChecker from "./components/ContrastChecker";
+import Footer from "./components/Footer";
 
 function App() {
     const [textInput, setTextInput] = useState("#000000");
@@ -13,24 +14,27 @@ function App() {
     const backgroundColour = normaliseHex(backgroundInput) || "#ffffff";
 
     return (
-        <main className="mx-auto grid max-w-6xl grid-cols-1 gap-6 p-6 xl:grid-cols-3">
-            <ColourPicker
-                textValue={textInput}
-                backgroundValue={backgroundInput}
-                onTextChange={setTextInput}
-                onBackgroundChange={setBackgroundInput}
-            />
+        <>
+            <main className="mx-auto grid max-w-6xl grid-cols-1 gap-6 p-6 xl:grid-cols-3">
+                <ColourPicker
+                    textValue={textInput}
+                    backgroundValue={backgroundInput}
+                    onTextChange={setTextInput}
+                    onBackgroundChange={setBackgroundInput}
+                />
 
-            <ContrastChecker
-                textHex={textColour}
-                backgroundHex={backgroundColour}
-            />
+                <ContrastChecker
+                    textHex={textColour}
+                    backgroundHex={backgroundColour}
+                />
 
-            <LivePreview
-                textHex={textColour}
-                backgroundHex={backgroundColour}
-            />
-        </main>
+                <LivePreview
+                    textHex={textColour}
+                    backgroundHex={backgroundColour}
+                />
+            </main>
+            <Footer />
+        </>
     );
 }
 
