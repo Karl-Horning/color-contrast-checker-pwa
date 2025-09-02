@@ -39,28 +39,65 @@ const ColourInput = ({
     const normalised = isValid ? normaliseHex(value) : "#000000";
 
     return (
-        <div className="w-1/2">
-            <label htmlFor={id} className="block font-medium">
+        <div className="w-full space-y-2">
+            <label
+                htmlFor={id}
+                className="block text-sm font-medium text-slate-700 dark:text-slate-200"
+            >
                 {label}
             </label>
-            <input
-                type="color"
-                value={normalised}
-                onChange={(e) => onChange(e.target.value)}
-                className="h-10 w-full rounded border"
-            />
-            <input
-                id={id}
-                type="text"
-                aria-label={`${label} hex value`}
-                aria-invalid={!isValid}
-                value={value}
-                onChange={(e) => onChange(e.target.value)}
-                placeholder={placeholder}
-                className={`w-full rounded border px-2 py-1 ${
-                    isValid ? "border-gray-300" : "border-red-500"
-                }`}
-            />
+
+            {/* Native colour picker */}
+            <div className="flex items-center gap-3">
+                <input
+                    type="color"
+                    value={normalised}
+                    onChange={(e) => onChange(e.target.value)}
+                    aria-label={`${label} colour`}
+                    className="h-10 w-10 cursor-pointer rounded-md border border-slate-300 dark:border-slate-600"
+                />
+
+                {/* Hex input */}
+                <input
+                    id={id}
+                    type="text"
+                    inputMode="text"
+                    aria-label={`${label} hex value`}
+                    aria-invalid={!isValid}
+                    aria-describedby={!isValid ? `${id}-error` : `${id}-hint`}
+                    value={value}
+                    onChange={(e) => onChange(e.target.value)}
+                    placeholder={placeholder}
+                    className={[
+                        "w-full rounded-lg border bg-white/70 dark:bg-slate-800/70",
+                        "px-3 py-2 text-sm",
+                        "placeholder:text-slate-400",
+                        "border-slate-300 dark:border-slate-600",
+                        "shadow-sm focus:ring-2 focus:ring-slate-400 focus:outline-none dark:focus:ring-slate-500",
+                        !isValid &&
+                            "border-red-500 focus:ring-red-400 dark:border-red-400 dark:focus:ring-red-500",
+                    ]
+                        .filter(Boolean)
+                        .join(" ")}
+                />
+            </div>
+
+            {/* Helper / error text */}
+            {isValid ? (
+                <p
+                    id={`${id}-hint`}
+                    className="text-xs text-slate-500 dark:text-slate-400"
+                >
+                    Normalised: <span className="font-mono">{normalised}</span>
+                </p>
+            ) : (
+                <p
+                    id={`${id}-error`}
+                    className="text-xs text-red-600 dark:text-red-400"
+                >
+                    Please enter a valid hex value (for example, #000, #1a2b3c).
+                </p>
+            )}
         </div>
     );
 };
@@ -83,12 +120,24 @@ const ColourPicker = ({
 }: ColourPickerProps) => {
     return (
         <section
-            className="space-y-3 rounded-lg border p-4"
+            className={[
+                "space-y-4 rounded-2xl border",
+                "border-slate-200 dark:border-slate-700",
+                "bg-white/60 dark:bg-slate-800/60",
+                "backdrop-blur-sm",
+                "p-4 sm:p-5",
+                "shadow-sm",
+            ].join(" ")}
             role="region"
             aria-label="Background and text colour pickers"
         >
-            <h3 className="text-lg font-bold">Colours</h3>
-            <div className="flex gap-4">
+            <header className="flex items-center justify-between">
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                    Colors
+                </h3>
+            </header>
+
+            <div className="flex flex-col gap-4">
                 <ColourInput
                     label="Text"
                     value={textValue}
