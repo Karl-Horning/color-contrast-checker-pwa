@@ -56,7 +56,7 @@ export default function Footer() {
                     &copy; {year} Made with ❤️ by{" "}
                     <a
                         href="https://www.karlhorning.dev"
-                        className="hover:text-primary underline"
+                        className="underline hover:text-pink-600"
                     >
                         Karl Horning
                     </a>
@@ -71,7 +71,7 @@ export default function Footer() {
                             key={label}
                             href={href}
                             aria-label={label}
-                            className="hover:text-primary rounded p-1 text-4xl text-slate-600 transition-colors duration-300 md:text-xl dark:text-slate-400"
+                            className="hover:text-primary rounded p-1 text-4xl text-slate-600 transition-colors duration-300 hover:text-pink-600 md:text-xl dark:text-slate-400"
                             target={
                                 href.startsWith("http") ? "_blank" : undefined
                             }
