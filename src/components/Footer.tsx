@@ -1,4 +1,5 @@
-import { FaGithub, FaLinkedin, FaGlobe, FaCodepen } from "react-icons/fa";
+import { BsInfoSquareFill } from "react-icons/bs";
+import { FaGithub, FaLinkedin, FaCodepen, FaRss } from "react-icons/fa";
 
 /**
  * Global site footer with author attribution and social links.
@@ -16,11 +17,11 @@ import { FaGithub, FaLinkedin, FaGlobe, FaCodepen } from "react-icons/fa";
 export default function Footer() {
     const year = new Date().getFullYear();
 
-    const links = [
+    const socialLinks = [
         {
             href: "https://www.karlhorning.dev/",
             label: "Personal site",
-            icon: <FaGlobe />,
+            icon: <BsInfoSquareFill />,
         },
         {
             href: "https://github.com/Karl-Horning",
@@ -37,45 +38,58 @@ export default function Footer() {
             label: "CodePen",
             icon: <FaCodepen />,
         },
+        {
+            href: "https://www.karlhorning.dev/rss.xml",
+            label: "RSS Feed",
+            icon: <FaRss />,
+        },
     ];
 
     return (
-        <footer className="mt-12 border-t border-slate-200 dark:border-slate-700">
-            <div className="mx-auto max-w-3xl space-y-3 px-4 py-6">
-                <p className="text-center text-slate-800 dark:text-slate-200">
-                    Made with <span aria-hidden="true">❤️</span>
-                    <span className="sr-only">love</span> by Karl Horning
+        <footer
+            id="footer"
+            className="border-t border-slate-200 py-10 text-center text-slate-600 dark:border-slate-800 dark:text-slate-400"
+            role="contentinfo"
+        >
+            <div className="mx-auto flex max-w-6xl flex-col items-center justify-between px-6 md:flex-row">
+                <p className="text-sm" aria-label="Copyright notice">
+                    &copy; {year} Made with ❤️ by{" "}
+                    <a
+                        href="https://www.karlhorning.dev"
+                        className="hover:text-primary underline"
+                    >
+                        Karl Horning
+                    </a>
+                    .
                 </p>
-
-                {/* Social links */}
                 <nav
-                    aria-label="Social links"
-                    className="flex justify-center gap-4"
+                    aria-label="Social media links"
+                    className="mt-4 flex space-x-6 md:mt-0"
                 >
-                    {links.map(({ href, label, icon }) => (
+                    {socialLinks.map(({ label, href, icon }) => (
                         <a
                             key={label}
                             href={href}
-                            target="_blank"
-                            rel="noopener noreferrer"
                             aria-label={label}
-                            className={[
-                                "text-slate-600 hover:text-slate-900",
-                                "dark:text-slate-400 dark:hover:text-slate-200",
-                                "focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2",
-                                "ring-offset-white dark:ring-offset-slate-900",
-                                "transition-colors motion-safe:duration-150",
-                                "text-lg",
-                            ].join(" ")}
+                            className="hover:text-primary rounded p-1 text-4xl text-slate-600 transition-colors duration-300 md:text-xl dark:text-slate-400"
+                            target={
+                                href.startsWith("http") ? "_blank" : undefined
+                            }
+                            rel={
+                                href.startsWith("http")
+                                    ? "noopener noreferrer"
+                                    : undefined
+                            }
+                            type={
+                                label.startsWith("RSS")
+                                    ? "application/rss+xml"
+                                    : undefined
+                            }
                         >
                             {icon}
                         </a>
                     ))}
                 </nav>
-
-                <p className="text-center text-sm text-slate-500 dark:text-slate-400">
-                    © {year} Karl Horning. All rights reserved.
-                </p>
             </div>
         </footer>
     );
