@@ -1,27 +1,27 @@
-# 🎨 Color Contrast Checker PWA
+# Color Contrast Checker PWA
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 
-- [🎨 Color Contrast Checker PWA](#-color-contrast-checker-pwa)
-  - [📖 Table of Contents](#-table-of-contents)
-  - [🤓 Overview](#-overview)
-  - [📸 Screenshots \& Demo](#-screenshots--demo)
-  - [🛠️ Tech Stack](#️-tech-stack)
-  - [📦 Installation](#-installation)
-  - [🚀 Scripts \& Usage](#-scripts--usage)
-  - [📁 Project Structure](#-project-structure)
-  - [✍️ Code Style \& Linting](#️-code-style--linting)
-  - [🌐 Live Site or Deployment](#-live-site-or-deployment)
-  - [📌 Roadmap](#-roadmap)
-  - [📚 Further Reading \& Resources](#-further-reading--resources)
-  - [📄 Licence](#-licence)
-  - [👤 Author](#-author)
+- [Color Contrast Checker PWA](#color-contrast-checker-pwa)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Screenshots \& Demo](#screenshots--demo)
+  - [Tech Stack](#tech-stack)
+  - [Installation](#installation)
+  - [Scripts \& Usage](#scripts--usage)
+  - [Project Structure](#project-structure)
+  - [Code Style \& Linting](#code-style--linting)
+  - [Live Site or Deployment](#live-site-or-deployment)
+  - [Roadmap](#roadmap)
+  - [Further Reading \& Resources](#further-reading--resources)
+  - [Licence](#licence)
+  - [Author](#author)
 
 ---
 
-## 🤓 Overview
+## Overview
 
 An accessible **Progressive Web App (PWA)** to check **colour (color) contrast ratios** for text and backgrounds, ensuring compliance with **WCAG**.
 
@@ -29,7 +29,7 @@ Features include live preview, clear pass/fail badges for AA/AAA (normal/large t
 
 ---
 
-## 📸 Screenshots & Demo
+## Screenshots & Demo
 
 ![Demo screenshot](public/demo.png)
 
@@ -37,7 +37,7 @@ Live: <https://www.karlhorning.dev/color-contrast-checker-pwa/>
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: Vite + React 19
 - **Languages**: TypeScript
@@ -46,7 +46,7 @@ Live: <https://www.karlhorning.dev/color-contrast-checker-pwa/>
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 git clone https://github.com/Karl-Horning/color-contrast-checker-pwa.git
@@ -56,7 +56,7 @@ npm install
 
 ---
 
-## 🚀 Scripts & Usage
+## Scripts & Usage
 
 | Command           | Description              |
 | ----------------- | ------------------------ |
@@ -67,7 +67,7 @@ npm install
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```bash
 src/
@@ -89,7 +89,7 @@ src/
 
 ---
 
-## ✍️ Code Style & Linting
+## Code Style & Linting
 
 - ESLint with recommended rules
 - Prettier with Tailwind plugin
@@ -97,14 +97,14 @@ src/
 
 ---
 
-## 🌐 Live Site or Deployment
+## Live Site or Deployment
 
 Visit the site:
-👉 **[Color Contrast Checker PWA](https://www.karlhorning.dev/color-contrast-checker-pwa/)**
+**[Color Contrast Checker PWA](https://www.karlhorning.dev/color-contrast-checker-pwa/)**
 
 ---
 
-## 📌 Roadmap
+## Roadmap
 
 - [x] Implement WCAG contrast ratio checking
 - [ ] Add offline support (PWA features for usage without internet)
@@ -115,7 +115,7 @@ Visit the site:
 
 ---
 
-## 📚 Further Reading & Resources
+## Further Reading & Resources
 
 - [W3C WCAG Contrast Guidelines](https://www.w3.org/WAI/WCAG21/quickref/#contrast-minimum)
 - [WebAIM: Contrast Checker](https://webaim.org/resources/contrastchecker/)
@@ -123,12 +123,12 @@ Visit the site:
 
 ---
 
-## 📄 Licence
+## Licence
 
 MIT © 2025 Karl Horning
 
 ---
 
-## 👤 Author
+## Author
 
 Made with ❤️ by [Karl Horning](https://github.com/Karl-Horning)
