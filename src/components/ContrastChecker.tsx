@@ -8,22 +8,22 @@ import StatusBadge from "./StatusBadge";
  * Props for the `ContrastChecker` component.
  */
 interface ContrastCheckerProps {
-    /** The hex value for the text colour */
+    /** The hex value for the text color */
     textHex: string;
-    /** The hex value for the background colour */
+    /** The hex value for the background color */
     backgroundHex: string;
 }
 
 /**
- * `ContrastChecker` displays the contrast ratio between two colours and their
+ * `ContrastChecker` displays the contrast ratio between two colors and their
  * compliance with WCAG 2.1 accessibility standards (AA and AAA, normal and large text).
  *
  * It calculates the contrast ratio using the `getContrastRatio` utility,
  * formats the result to two decimal places, and renders pass/fail badges
  * for each WCAG requirement using `StatusBadge`.
  *
- * @param textHex - The hex code for the text colour (for example, "#000000")
- * @param backgroundHex - The hex code for the background colour (for example, "#ffffff")
+ * @param textHex - The hex code for the text color (for example, "#000000")
+ * @param backgroundHex - The hex code for the background color (for example, "#ffffff")
  * @returns A section of JSX displaying contrast results and WCAG compliance status.
  */
 export default function ContrastChecker({

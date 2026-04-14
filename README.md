@@ -23,7 +23,7 @@
 
 ## Overview
 
-An accessible **Progressive Web App (PWA)** to check **colour (color) contrast ratios** for text and backgrounds, ensuring compliance with **WCAG**.
+An accessible **Progressive Web App (PWA)** to check **color (color) contrast ratios** for text and backgrounds, ensuring compliance with **WCAG**.
 
 Features include live preview, clear pass/fail badges for AA/AAA (normal/large text), keyboard-friendly controls, and a class-based dark mode.
 
@@ -71,8 +71,8 @@ npm install
 
 ```bash
 src/
-├── components/               # UI components (ColourPicker, ContrastChecker, LivePreview, Header, Footer, etc.)
-├── utils/                    # Utilities (e.g. colour/contrast helpers)
+├── components/               # UI components (ColorPicker, ContrastChecker, LivePreview, Header, Footer, etc.)
+├── utils/                    # Utilities (e.g. color/contrast helpers)
 ├── assets/                   # Icons/images (SVG/PNG) if imported by components
 ├── App.tsx                   # Root layout (grid of components)
 ├── main.tsx                  # React entry
@@ -108,8 +108,8 @@ Visit the site:
 
 - [x] Implement WCAG contrast ratio checking
 - [ ] Add offline support (PWA features for usage without internet)
-- [ ] Allow saving custom colour palettes
-- [ ] Suggest accessible colour combinations based on user input
+- [ ] Allow saving custom color palettes
+- [ ] Suggest accessible color combinations based on user input
 - [ ] Improve responsive layout and accessibility audits
 - [ ] Add sharing/export options for palettes and results
 
@@ -119,7 +119,7 @@ Visit the site:
 
 - [W3C WCAG Contrast Guidelines](https://www.w3.org/WAI/WCAG21/quickref/#contrast-minimum)
 - [WebAIM: Contrast Checker](https://webaim.org/resources/contrastchecker/)
-- [The Paciello Group: Colour Contrast Analyser](https://www.tpgi.com/color-contrast-checker/)
+- [The Paciello Group: Color Contrast Analyser](https://www.tpgi.com/color-contrast-checker/)
 
 ---
 

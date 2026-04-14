@@ -12,7 +12,7 @@ interface StatusBadgeProps {
 }
 
 /**
- * Renders a coloured badge with an icon and label representing either a "pass" or "fail" status.
+ * Renders a colored badge with an icon and label representing either a "pass" or "fail" status.
  *
  * This is used to visually indicate the result of a contrast check.
  *
