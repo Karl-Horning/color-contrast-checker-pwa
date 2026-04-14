@@ -62,7 +62,6 @@ const ColourInput = ({
                     id={id}
                     type="text"
                     inputMode="text"
-                    aria-label={`${label} hex value`}
                     aria-invalid={!isValid}
                     aria-describedby={!isValid ? `${id}-error` : `${id}-hint`}
                     value={value}
