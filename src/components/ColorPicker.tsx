@@ -62,7 +62,7 @@ const ColorInput = ({
                     id={id}
                     type="text"
                     inputMode="text"
-                    aria-invalid={!isValid}
+                    aria-invalid={!isValid || undefined}
                     aria-describedby={!isValid ? `${id}-error` : `${id}-hint`}
                     value={value}
                     onChange={(e) => onChange(e.target.value)}
