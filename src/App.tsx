@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import ColorPicker from "./components/ColorPicker";
 import LivePreview from "./components/LivePreview";
 import { normaliseHex } from "./utils/colorUtils";
