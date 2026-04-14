@@ -15,16 +15,10 @@ interface ContrastCheckerProps {
 }
 
 /**
- * `ContrastChecker` displays the contrast ratio between two colors and their
- * compliance with WCAG 2.1 accessibility standards (AA and AAA, normal and large text).
- *
- * It calculates the contrast ratio using the `getContrastRatio` utility,
- * formats the result to two decimal places, and renders pass/fail badges
- * for each WCAG requirement using `StatusBadge`.
+ * Displays the contrast ratio between two colors and pass/fail results for WCAG 2.1 AA and AAA levels.
  *
  * @param textHex - The hex code for the text color (for example, "#000000")
  * @param backgroundHex - The hex code for the background color (for example, "#ffffff")
- * @returns A section of JSX displaying contrast results and WCAG compliance status.
  */
 export default function ContrastChecker({
     textHex,
