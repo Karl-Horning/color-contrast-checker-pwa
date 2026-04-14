@@ -1,29 +1,29 @@
-import { normaliseHex } from "../utils/colourUtils";
+import { normaliseHex } from "../utils/colorUtils";
 
 /**
- * Props for the `ColourPicker` component.
+ * Props for the `ColorPicker` component.
  */
-interface ColourPickerProps {
-    /** The current hex value for the text colour */
+interface ColorPickerProps {
+    /** The current hex value for the text color */
     textValue: string;
-    /** The current hex value for the background colour */
+    /** The current hex value for the background color */
     backgroundValue: string;
-    /** Callback to update the text colour value */
+    /** Callback to update the text color value */
     onTextChange: (val: string) => void;
-    /** Callback to update the background colour value */
+    /** Callback to update the background color value */
     onBackgroundChange: (val: string) => void;
 }
 
 /**
- * A colour input field containing both a colour picker and a text field for hex input.
+ * A color input field containing both a color picker and a text field for hex input.
  *
- * @param label - The label for the colour input (for example, "Text", "Background")
- * @param value - The current hex colour value
+ * @param label - The label for the color input (for example, "Text", "Background")
+ * @param value - The current hex color value
  * @param onChange - Callback when the value changes
  * @param placeholder - The placeholder text for the text input
  * @returns JSX element containing the input
  */
-const ColourInput = ({
+const ColorInput = ({
     label,
     value,
     onChange,
@@ -47,13 +47,13 @@ const ColourInput = ({
                 {label}
             </label>
 
-            {/* Native colour picker */}
+            {/* Native color picker */}
             <div className="flex items-center gap-3">
                 <input
                     type="color"
                     value={normalised}
                     onChange={(e) => onChange(e.target.value)}
-                    aria-label={`${label} colour`}
+                    aria-label={`${label} color`}
                     className="h-10 w-10 cursor-pointer rounded-md border border-slate-300 dark:border-slate-600"
                 />
 
@@ -102,21 +102,21 @@ const ColourInput = ({
 };
 
 /**
- * A component for selecting text and background colours using hex values.
+ * A component for selecting text and background colors using hex values.
  * Includes validation and normalisation of hex codes.
  *
- * @param textValue - The current text colour hex value
- * @param backgroundValue - The current background colour hex value
- * @param onTextChange - Callback when the text colour value changes
- * @param onBackgroundChange - Callback when the background colour value changes
- * @returns JSX element with both colour pickers
+ * @param textValue - The current text color hex value
+ * @param backgroundValue - The current background color hex value
+ * @param onTextChange - Callback when the text color value changes
+ * @param onBackgroundChange - Callback when the background color value changes
+ * @returns JSX element with both color pickers
  */
-const ColourPicker = ({
+const ColorPicker = ({
     textValue,
     backgroundValue,
     onTextChange,
     onBackgroundChange,
-}: ColourPickerProps) => {
+}: ColorPickerProps) => {
     return (
         <section
             className={[
@@ -127,7 +127,7 @@ const ColourPicker = ({
                 "p-4 sm:p-5",
                 "shadow-sm",
             ].join(" ")}
-            aria-label="Background and text colour pickers"
+            aria-label="Background and text color pickers"
         >
             <header className="flex items-center justify-between">
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
@@ -136,13 +136,13 @@ const ColourPicker = ({
             </header>
 
             <div className="flex flex-col gap-4">
-                <ColourInput
+                <ColorInput
                     label="Text"
                     value={textValue}
                     onChange={onTextChange}
                     placeholder="#000000"
                 />
-                <ColourInput
+                <ColorInput
                     label="Background"
                     value={backgroundValue}
                     onChange={onBackgroundChange}
@@ -153,4 +153,4 @@ const ColourPicker = ({
     );
 };
 
-export default ColourPicker;
+export default ColorPicker;

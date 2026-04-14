@@ -2,18 +2,18 @@
  * Props for the `LivePreview` component.
  */
 interface LivePreviewProps {
-    /** The hex value for the text colour */
+    /** The hex value for the text color */
     textHex: string;
-    /** The hex value for the background colour */
+    /** The hex value for the background color */
     backgroundHex: string;
 }
 
 /**
- * A live preview component that renders sample text with user-selected text and background colours.
+ * A live preview component that renders sample text with user-selected text and background colors.
  *
- * @param textHex - The hex value for the text colour
- * @param backgroundHex - The hex value for the background colour
- * @returns JSX element displaying the live colour preview
+ * @param textHex - The hex value for the text color
+ * @param backgroundHex - The hex value for the background color
+ * @returns JSX element displaying the live color preview
  */
 export default function LivePreview({
     textHex,
@@ -36,7 +36,7 @@ export default function LivePreview({
                     Live Preview
                 </h3>
 
-                {/* Current colours (for quick reference) */}
+                {/* Current colors (for quick reference) */}
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-slate-700 dark:text-slate-300">
                     <span className="inline-flex items-center gap-2">
                         <span
@@ -69,7 +69,7 @@ export default function LivePreview({
                     "shadow-sm",
                 ].join(" ")}
                 style={{ backgroundColor: backgroundHex, color: textHex }}
-                aria-label={`Preview area with text colour ${textHex} on background ${backgroundHex}`}
+                aria-label={`Preview area with text color ${textHex} on background ${backgroundHex}`}
             >
                 <p className="text-xl font-semibold tracking-tight sm:text-2xl">
                     This is a live preview of large text
@@ -80,7 +80,7 @@ export default function LivePreview({
 
                 {/* Visually hidden helper for screen readers */}
                 <span className="sr-only" aria-live="polite">
-                    Text colour {textHex}. Background colour {backgroundHex}.
+                    Text color {textHex}. Background color {backgroundHex}.
                 </span>
             </div>
         </section>

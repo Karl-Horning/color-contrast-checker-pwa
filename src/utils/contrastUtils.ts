@@ -1,7 +1,7 @@
 /**
- * Converts a hex colour string to an RGB array.
+ * Converts a hex color string to an RGB array.
  *
- * @param hex - A hex colour string, for example, "#ffffff" or "#abc"
+ * @param hex - A hex color string, for example, "#ffffff" or "#abc"
  * @returns A tuple of RGB values, for example, [255, 255, 255]
  */
 export const hexToRgb = (hex: string): [number, number, number] => {
@@ -21,7 +21,7 @@ export const hexToRgb = (hex: string): [number, number, number] => {
 };
 
 /**
- * Calculates the relative luminance of an RGB colour.
+ * Calculates the relative luminance of an RGB color.
  *
  * Uses the formula from WCAG 2.1 for sRGB linearisation.
  *
@@ -40,10 +40,10 @@ export const luminance = ([r, g, b]: [number, number, number]): number => {
 };
 
 /**
- * Calculates the contrast ratio between two hex colour values.
+ * Calculates the contrast ratio between two hex color values.
  *
- * @param hex1 - First hex colour (for example, "#000000")
- * @param hex2 - Second hex colour (for example, "#ffffff")
+ * @param hex1 - First hex color (for example, "#000000")
+ * @param hex2 - Second hex color (for example, "#ffffff")
  * @returns The contrast ratio (for example, 21 or 4.5)
  */
 export const getContrastRatio = (hex1: string, hex2: string): number => {
