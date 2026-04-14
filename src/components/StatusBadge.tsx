@@ -52,8 +52,6 @@ export default function StatusBadge({
                 border,
                 className,
             ].join(" ")}
-            // Helpful native tooltip, especially when truncated in tight layouts
-            title={label}
         >
             <img
                 src={icon}
