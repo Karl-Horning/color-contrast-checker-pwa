@@ -1,4 +1,0 @@
-@import "tailwindcss";
-
-/* Make `dark:` utilities respond to a `.dark` class on <html> (or any ancestor) */
-@custom-variant dark (&:where(.dark, .dark *));
