@@ -27,12 +27,14 @@ npm install
 
 ## Scripts and usage
 
-| Command           | Description              |
-| ----------------- | ------------------------ |
-| `npm run dev`     | Start local development  |
-| `npm run build`   | Build for production     |
-| `npm run preview` | Preview production build |
-| `npm run lint`    | Run ESLint checks        |
+| Command               | Description              |
+| --------------------- | ------------------------ |
+| `npm run dev`         | Start local development  |
+| `npm run build`       | Build for production     |
+| `npm run preview`     | Preview production build |
+| `npm run lint`        | Run ESLint checks        |
+| `npm test`.           | Run vitest               |
+| `npm run test:watch`  | Run vitest in watch mode |
 
 ## Resources
 
