@@ -53,7 +53,6 @@ export default function ContrastChecker({
                 "shadow-sm",
             ].join(" ")}
             aria-labelledby="contrast-heading"
-            role="group"
         >
             <header className="flex items-center justify-between">
                 <h3
@@ -77,13 +76,11 @@ export default function ContrastChecker({
             {/* Results list */}
             <dl
                 className="grid grid-cols-1 gap-x-6 gap-y-3"
-                role="list"
             >
                 {results.map(({ label, passed }) => (
                     <div
                         key={label}
                         className="flex items-center justify-between rounded-lg border border-slate-200 bg-white/50 px-3 py-2 dark:border-slate-700 dark:bg-slate-800/50"
-                        role="listitem"
                     >
                         <dt className="text-sm font-medium text-slate-800 dark:text-slate-200">
                             {label}

@@ -29,7 +29,6 @@ export default function LivePreview({
                 "p-4 sm:p-5",
                 "shadow-sm",
             ].join(" ")}
-            role="region"
             aria-label="Live preview"
         >
             <header className="flex flex-col gap-2">
@@ -70,7 +69,6 @@ export default function LivePreview({
                     "shadow-sm",
                 ].join(" ")}
                 style={{ backgroundColor: backgroundHex, color: textHex }}
-                role="img"
                 aria-label={`Preview area with text colour ${textHex} on background ${backgroundHex}`}
             >
                 <p className="text-xl font-semibold tracking-tight sm:text-2xl">

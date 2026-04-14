@@ -128,7 +128,6 @@ const ColourPicker = ({
                 "p-4 sm:p-5",
                 "shadow-sm",
             ].join(" ")}
-            role="region"
             aria-label="Background and text colour pickers"
         >
             <header className="flex items-center justify-between">
