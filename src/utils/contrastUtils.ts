@@ -23,7 +23,7 @@ export const hexToRgb = (hex: string): [number, number, number] => {
 /**
  * Calculates the relative luminance of an RGB color.
  *
- * Uses the formula from WCAG 2.1 for sRGB linearisation.
+ * Uses the formula from WCAG 2.1 & 2.2 for sRGB linearisation.
  *
  * @param rgb - An array of RGB values, for example, [255, 255, 255]
  * @returns The relative luminance value (0.0 to 1.0)
@@ -55,7 +55,7 @@ export const getContrastRatio = (hex1: string, hex2: string): number => {
 };
 
 /**
- * Returns WCAG 2.1 compliance results for a given contrast ratio.
+ * Returns WCAG 2.1 & 2.2 compliance results for a given contrast ratio.
  *
  * @param contrastRatio - The contrast ratio between text and background, for example, 4.5 or 7.23
  * @returns An object indicating which WCAG levels the contrast ratio passes

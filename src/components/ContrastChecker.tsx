@@ -15,7 +15,7 @@ interface ContrastCheckerProps {
 }
 
 /**
- * Displays the contrast ratio between two colors and pass/fail results for WCAG 2.1 AA and AAA levels.
+ * Displays the contrast ratio between two colors and pass/fail results for WCAG 2.1 & 2.2 AA and AAA levels.
  *
  * @param textHex - The hex code for the text color (for example, "#000000")
  * @param backgroundHex - The hex code for the background color (for example, "#ffffff")
