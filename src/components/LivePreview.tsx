@@ -32,9 +32,9 @@ export default function LivePreview({
             aria-label="Live preview"
         >
             <header className="flex flex-col gap-2">
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
                     Live Preview
-                </h3>
+                </h2>
 
                 {/* Current colors (for quick reference) */}
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-slate-700 dark:text-slate-300">
@@ -69,11 +69,10 @@ export default function LivePreview({
                     "shadow-sm",
                 ].join(" ")}
                 style={{ backgroundColor: backgroundHex, color: textHex }}
-                aria-label={`Preview area with text color ${textHex} on background ${backgroundHex}`}
             >
-                <p className="text-xl font-semibold tracking-tight sm:text-2xl">
+                <h3 className="text-xl font-semibold tracking-tight sm:text-2xl">
                     This is a live preview of large text
-                </p>
+                </h3>
                 <p className="mt-2 text-base sm:text-lg">
                     This is a live preview of normal text
                 </p>

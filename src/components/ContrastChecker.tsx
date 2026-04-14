@@ -49,12 +49,12 @@ export default function ContrastChecker({
             aria-labelledby="contrast-heading"
         >
             <header className="flex items-center justify-between">
-                <h3
+                <h2
                     id="contrast-heading"
                     className="text-lg font-semibold text-slate-900 dark:text-slate-100"
                 >
                     Results
-                </h3>
+                </h2>
 
                 {/* Prominent ratio display */}
                 <div

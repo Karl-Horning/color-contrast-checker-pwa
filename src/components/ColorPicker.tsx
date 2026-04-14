@@ -130,9 +130,9 @@ const ColorPicker = ({
             aria-label="Background and text color pickers"
         >
             <header className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
                     Colors
-                </h3>
+                </h2>
             </header>
 
             <div className="flex flex-col gap-4">
