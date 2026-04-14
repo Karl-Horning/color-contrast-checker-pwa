@@ -20,7 +20,7 @@ export default defineConfig({
                 name: "Color Contrast Checker",
                 short_name: "CC Checker",
                 description:
-                    "A Progressive Web App for checking color (color) contrast ratios and WCAG compliance, with offline support, saved palettes, and suggested combinations.",
+                    "Validate WCAG 2.1 & 2.2 color contrast ratios for AA & AAA compliance. A fast, PWA-ready tool by Karl Horning for accessible web design.",
                 theme_color: "#0f172a",
                 background_color: "#f8fafc",
                 display: "standalone",
