@@ -2,17 +2,9 @@ import { BsInfoSquareFill } from "react-icons/bs";
 import { FaGithub, FaLinkedin, FaCodepen, FaRss } from "react-icons/fa";
 
 /**
- * Global site footer with author attribution and social links.
+ * Global footer with author credit, social links, and a dynamic copyright notice.
  *
- * Renders:
- * - A short message with author credit
- * - Links to external profiles (personal site, GitHub, LinkedIn, CodePen)
- * - A dynamic copyright notice
- *
- * The social links are presented with accessible labels and focus styles
- * to ensure good usability in both light and dark modes.
- *
- * @returns A styled `<footer>` element with attribution, links, and copyright.
+ * @returns A `<footer>` element with attribution and links to external profiles.
  */
 export default function Footer() {
     const year = new Date().getFullYear();
